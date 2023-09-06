@@ -1,0 +1,179 @@
+{
+  "multiple_files" : [ 
+   {
+   "files":  ["D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX1.zip",
+              "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX2.zip",
+              "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX3.zip",
+              "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX4.zip",
+              "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX5.zip"],
+   "date": "2023-05-09T16:03:06.000000+00:00",
+   "cameraModel": "MC050CG-SY-UB",
+   "cameraName": "ximea_1",
+   "viewName": "top",
+   "tags": {
+       "2": "3",
+       "5": "6",
+       "7": "9"
+   },
+   "padding": {
+       "dimension": "246224x63323230",
+       "position": "bottom"
+     },
+   "description": "yftft",
+   "customer": "pepsico",
+   "site": "Grand Prairie",
+   "fps": "1",
+   "resolution": "120x120",
+   "exposure": "gyft",
+   "reviewForViewChange": true,
+   "typeOfData": "rawdata",
+   "projectName": "bcheck",
+   "dataUploadFormat": "zip",
+   "systemName" : "koireader-rtx3090-us-0006",
+   "recordedUsing": "ximea_sdk"
+  
+   },
+
+   {
+    "files":  ["D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX6.mp4",
+               "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX7.mp4",
+               "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX8.mp4"],
+    "date": "2023-05-09T16:03:06.000000+00:00",
+    "cameraModel": "fccf",
+    "cameraName": "ximea_1",
+    "viewName": "hgv",
+    "tags": {
+        "2": "3",
+        "5": "6",
+        "7": "9"
+    },
+    "padding": {
+        "dimension": "246224x63323230",
+        "position": "bottom"
+      },
+    "description": "yftft",
+    "customer": "pepsico",
+    "site": "Grand Prairie",
+    "fps": 1,
+    "resolution": "120x120",
+    "exposure": "gyft",
+    "reviewForViewChange": 2,
+    "typeOfData": "rawdata",
+    "projectName": "bcheck",
+    "dataUploadFormat": "video",
+    "systemName" : "koireader-rtx3090-us-0006",
+    "recordedUsing": "ximea_sdk"
+   
+    },
+
+   {
+       "files": ["D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX9.zip",
+                  "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX9.zip"],
+       "date": "2023-05-10T16:03:06.000000+00:00",
+       "cameraModel": "Nano-C4040",
+       "viewName": "hv",
+       "description": "yft",
+       "cameraName": "ximea_2",
+       "customer": "pepsico",
+       "site": "Grand Prairie",
+       "fps": 1,
+       "resolution": "120120",
+       "exposure": "gyft",
+       "reviewForViewChange": true,
+       "typeOfData": "textcrops",
+       "projectName": "s2u-connect-inbound",
+       "dataUploadFormat": "zip",
+       "systemName" : "koireader-rtx3090-us-0006",
+       "recordedUsing": "ximea_sdk"
+       
+
+       },
+
+       {
+           "files": ["D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX5.jpeg",
+                   "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX6.zip",
+                   "D:/20-04-2023/images/D20230413_T02_19_53_239682_IDX7.zip"],
+
+           "date": "2023-06-02T16:03:06.000000+00:00",
+           "cameraModel": "fcf",
+           "viewName": "hbh",
+           "description": "yft",
+           "customer": "pepsico",
+           "site": "Grand Prairie",
+           "fps": 1,
+           "resolution": "120x120",
+           "exposure": "gyft",
+           "reviewForViewChange": false,
+           "typeOfData": "textcrops",
+           "projectName": "s2u-connect-inbound",
+           "dataUploadFormat": "zip",
+           "systemName" : "koireader-rtx3090-us-0006",
+           "cameraName": "ximea",
+           "recordedUsing": "ximea_sdk"
+          
+           },
+           
+       {
+           "files": ["D:/20-04-2023/video/D20230413_T02_19_53_239682_IDX8.mp4",
+                    "D:/20-04-2023/video/D20230413_T02_19_53_239682_IDX9.mp4"],
+
+           "date": "2023-05-09T16:03:06.000000+00:00",
+           "cameraModel": "cf",
+           "viewName": "h",
+           "tags": {
+               "2": "5",
+               "5": "7",
+               "7": "10"
+           },
+           "description": "yft",
+           "customer": "pepsico",
+           "site": "Grand Prairie",
+           "cameraName": "ximeacdsd",
+           "fps": 2,
+           "resolution": "130x120",
+           "exposure": "gyft",
+           "reviewForViewChange": false,
+           "typeOfData": "textcrops",
+           "projectName": "s2u-connect-inbound",
+           "dataUploadFormat": "video",
+           "systemName" : "koireader-rtx3090-us-0006",
+           
+           "recordedUsing": "ximea_sdk"
+           
+           },
+           {
+               "files": ["D:/20-04-2023/video/D20230413_T02_19_53_239682_IDX10.mp4",
+                   "D:/20-04-2023/video/D20230413_T02_19_53_239682_IDX11.mp4",
+                   "D:/20-04-2023/video/D20230413_T02_19_53_239682_IDX12.mp4"],
+               "cameraModel": "MC050CG-SY-UB",
+               "cameraName": "ximea",
+               "customer": "PepsiCo",
+               "date": "2023-05-09T16:03:06.000000+00:00",
+               "description": "",
+               "exposure": "5000",
+               "fps": 14,
+               "systemName" : "koireader-rtx3090-us-0006",
+               "gain": "24",
+               "padding": {
+                 "dimension": "2464x60",
+                 "position": "bottom"
+               },
+               "recordedUsing": "ximea_sdk",
+               "resolution": "2464x2056",
+               "reviewForViewChange": false,
+               "projectName": "s2u-connect-inbound",
+               "site": "Grand Prairied Prairie",
+               "dataUploadFormat": "video",
+               "tags": {
+                 "lens": "",
+                 "portID": "10"
+               },
+               "viewName": "leftCartonView",
+               "typeOfData": "textcrops"
+              
+             }
+ 
+    
+       ]
+}
+

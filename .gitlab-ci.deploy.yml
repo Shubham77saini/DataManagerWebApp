@@ -1,0 +1,39 @@
+.deploy:
+  stage: deploy
+  needs: ["build"]
+  image:
+    name: 'public.ecr.aws/koireader/base-images:helm.kubectl'
+    entrypoint:
+      - ''
+  before_script:
+    - 'mkdir ~/.kube/'
+    - 'echo $KUBE_CONFIG | base64 -d > sa-config'
+    - 'mv sa-config ~/.kube/config'
+    - 'chmod 600 ~/.kube/config'
+    # - 'echo $GITCRYPT_SYMMETRIC_BASE64_KEY | base64 -d > ~/.git-crypt.key'
+    - 'git clone https://$HELM_REPO_USERNAME:$HELM_REPO_TOKEN@gitlab.com/${REPOSITORY_GROUP}/${HELM_REPOSITORY_NAME}.git'
+    # - 'cd ${HELM_REPOSITORY_NAME} && git-crypt unlock ~/.git-crypt.key && cd .. && rm ~/.git-crypt.key'
+  only:
+    variables:
+      - $IMAGE_TAG != null
+  when: manual
+
+deploy_development:
+  environment:
+    name: dev
+  extends: .deploy
+  script:
+    - 'helm upgrade --install ${DEPLOYMENT_NAME} --set base.recommended_labels.version=${CI_COMMIT_SHORT_SHA} --set base.image=${REPOSITORY_URL} --set base.imageTag=${IMAGE_TAG} ./${HELM_REPOSITORY_NAME}/ -f ./${HELM_REPOSITORY_NAME}/values.yaml -f ./${HELM_REPOSITORY_NAME}/values-dev.yaml -n ${DEPLOYMENT_NAMESPACE} --wait --timeout 15m'
+  only:
+    refs:
+      - dev
+
+deploy_production:
+  environment:
+    name: prod
+  extends: .deploy
+  script:
+    - 'helm upgrade --install ${DEPLOYMENT_NAME} --set base.recommended_labels.version=${CI_COMMIT_SHORT_SHA} --set base.image=${REPOSITORY_URL} --set base.imageTag=${IMAGE_TAG} ./${HELM_REPOSITORY_NAME}/ -f ./${HELM_REPOSITORY_NAME}/values.yaml -f ./${HELM_REPOSITORY_NAME}/values-prod.yaml -n ${DEPLOYMENT_NAMESPACE} --wait --timeout 15m'
+  only:
+    refs:
+      - main

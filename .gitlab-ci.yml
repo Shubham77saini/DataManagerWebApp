@@ -1,0 +1,35 @@
+stages:
+  - test
+  - build
+  # - deploy
+
+variables:
+  IMAGE_TAG: '$CI_COMMIT_SHORT_SHA'
+  DEPLOYMENT_NAME: 'koi-data-manager'
+  DEPLOYMENT_NAMESPACE: 'tools'
+  HELM_REPOSITORY_NAME: 'koidatamanager-helm'
+  REPOSITORY_GROUP: 'koireader/koivision'
+  AWS_DEFAULT_REGION: '$REGION'
+
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"credsStore\":\"ecr-login\",\"credHelpers\":{\"$AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com\":\"ecr-login\"}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR
+      --dockerfile $CI_PROJECT_DIR/Dockerfile
+      --build-arg=AWS_DEFAULT_REGION=$REGION
+      --destination $REPOSITORY_URL:$IMAGE_TAG
+  only:
+    - main
+    - dev
+  when: manual
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Jobs/SAST-IaC.gitlab-ci.yml
+  # - local: .gitlab-ci.deploy.yml

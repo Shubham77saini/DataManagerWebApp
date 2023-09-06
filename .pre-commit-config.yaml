@@ -1,0 +1,75 @@
+default_language_version:
+    python: python3
+fail_fast: false
+repos:
+-   repo: https://github.com/ambv/black
+    rev: 23.7.0
+    hooks:
+    - id: black
+      name: Black Formatter
+      language_version: python3
+-   repo: https://github.com/jorisroovers/gitlint
+    rev:  v0.19.1
+    hooks:
+    - id: gitlint
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    - id: detect-private-key
+      name: Detecting Private Keys
+    - id: end-of-file-fixer
+      language: python
+      types: [python]
+    - id: check-toml
+    - id: check-yaml
+    - id: check-symlinks
+    - id: check-merge-conflict
+    - id: debug-statements
+    - id: check-added-large-files
+    - id: check-json
+    - id: trailing-whitespace
+      name: Trim Trailing Whitespace
+      description: This hook trims trailing whitespace.
+      language: python
+      types: [python]
+# -   repo: https://github.com/econchick/interrogate
+#     rev: 1.5.0  # or master if you're bold
+#     hooks:
+#     - id: interrogate
+#       exclude: main.py|constants.py|docs|experimental|scripts|config|health_check|tests
+#       args: [--ignore-init-method, --ignore-magic, --ignore-property-decorators, --ignore-setters, --verbose, --fail-under=40]
+-   repo: https://github.com/python-poetry/poetry
+    rev: '1.5.1'  # add version here
+    hooks:
+      - id: poetry-check
+      # - id: poetry-lock
+      - id: poetry-export
+        args: ["-f", "requirements.txt", "-o", "requirements.txt", "--without-hashes"]
+# -   repo: https://github.com/PyCQA/pydocstyle.git
+#     rev: 2dfbb3803610f2232328e244a301462ceeb18b40
+#     hooks:
+#     - id: pydocstyle
+
+# -   repo: https://github.com/Cielquan/poetry
+#     rev: 60202f1b45335dc05f25166b5d015247a07bd367
+#     hooks:
+#     - id: poetry-check
+#     - id: poetry-lock
+#     - id: poetry-export
+# -   repo: https://github.com/kadrach/pre-commit-gitlabci-lint
+#     rev: ab984c60414b012e294a65166691473047ccce49
+#     hooks:
+#       - id: gitlabci-lint
+# -   repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+#     rev: v1.0.4
+#     hooks:
+#     - id: python-bandit-vulnerability-check
+#       name: Bandit
+#       language: python
+#       types: [python]
+#       args: []
+#       files: .py$
+# -   repo: https://gitlab.com/pycqa/flake8
+#     rev: '3.8.2'
+#     hooks:
+#     -   id: flake8

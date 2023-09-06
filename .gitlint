@@ -1,0 +1,35 @@
+[general]
+ignore-merge-commits=false
+ignore-revert-commits=false
+ignore-fixup-commits=false
+ignore-squash-commits=false
+
+# commit message to gitlint via stdin or --commit-msg. Disabled by default.
+staged=true
+
+# Enable debug mode (prints more output). Disabled by default.
+debug=true
+
+# Enable community contributed rules
+# See http://jorisroovers.github.io/gitlint/contrib_rules for details
+contrib=contrib-title-conventional-commits
+
+[contrib-title-conventional-commits]
+# Specify allowed commit types. For details see: https://www.conventionalcommits.org/
+types = fix,feat,chore,docs,style,refactor,perf,test,revert,ci,build
+
+#[title-match-regex]
+# python like regex (https://docs.python.org/3/library/re.html) that the
+# commit-msg title must be matched to.
+# Note that the regex can contradict with other rules if not used correctly
+# (e.g. title-must-not-contain-word).
+#regex=(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|test)(!|\(.+\))?:[ ].*
+
+[title-max-length]
+line-length=120
+
+[body-min-length]
+min-length=10
+
+[body-changed-file-mention]
+files=.gitlint,.pre-commit-config.yaml,.pre-commit-hooks.yaml,health.sh,install.sh,.gitlab-ci.yml,Dockerfile,pre_commit_hooks,src/config/production_db_table_config.py
